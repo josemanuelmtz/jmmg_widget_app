@@ -1,3 +1,9 @@
 export 'buttons/buttons_screen.dart';
 export 'cards/card_screen.dart';
 export 'home/home_screen.dart';
+export 'animated/animated_screen.dart';
+export 'app_tutorial/app_tutorial_screen.dart';
+export 'infinite_scrolls/infinite_scroll_screen.dart';
+export 'progress/progress_screen.dart';
+export 'ui_controlls/ui_controlls_screen.dart';
+export 'snackbar/snackbar_screen.dart';
