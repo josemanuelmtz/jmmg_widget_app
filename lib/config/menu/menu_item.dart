@@ -1,25 +1,29 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
 class MenuItem {
   final String title;
   final String subTitle;
   final String link;
-  final String icon;
+  final IconData icon;
 
-  MenuItem({
+  const MenuItem({
     required this.title, 
     required this.subTitle, 
     required this.link, 
-    required this.icon
-  });
+    required this.icon});
+}
 
-const AppMenuItems = <MenuItem> [
-  MenuItem (
+const appMenuItems = <MenuItem> [
+  MenuItem(
     title: 'Botones',
-    subTitle: 'Un contenedor estilizado',
-    link: '/cards',
-    icon: Icons.add_card_rounded
+    subTitle: 'Varios botones en Flutter',
+    link: '/buttons',
+    icon: Icons.smart_button_rounded
+  ),
+  MenuItem(
+    title: 'Botones',
+    subTitle: 'Varios botones en Flutter',
+    link: '/buttons',
+    icon: Icons.smart_button_outlined
   )
 ];
-
-}

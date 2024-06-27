@@ -1,7 +1,9 @@
-import "package:flutter/material.dart";
-import "package:jmmg_widget_app/config/menu/menu_item.dart";
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jmmg_widget_app/config/menu/menu_item.dart';
+//import '/presentation/screens/screens.dart';
 
-class HomeScreen ecxtends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
@@ -21,11 +23,12 @@ class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: AppMenuItems.length,
+      itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
-        final menuItem = AppMenuItems[index];
-      },
+        final menuItem = appMenuItems[index];
 
+        return _CustomTile(menuItem: menuItem);
+      },
     );
   }
 }
@@ -33,25 +36,20 @@ class _HomeView extends StatelessWidget {
 class _CustomTile extends StatelessWidget {
   final MenuItem menuItem;
 
-  const _CustomTile({
-    required this.menuItem
-  });
+  const _CustomTile({required this.menuItem});
 
   @override
   Widget build(BuildContext context) {
-    
-    final color = Theme.of(context).colorScheme;
 
+    final color = Theme.of(context).colorScheme;
     return ListTile(
-      leading: Icon(menuItem.icon, color: color.primary,),
+      leading: Icon(menuItem.icon),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
-      trailing: const Icon(Icons.arrow_forward_ios_outlined),
+      trailing: Icon(Icons.arrow_forward_ios_outlined, color: color.primary,),
       onTap: () {
-        
+          context.push(menuItem.link);
       },
-    )
+    );
   }
-
-
 }

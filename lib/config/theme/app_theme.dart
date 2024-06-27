@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 
-class AppTheme{ 
+const colorList = <Color>[
+  Colors.black,
+  Colors.green
+];
 
-  const colorList = <Color> [
-    Colors.blue,
-    Colors.red,
-    Colors.blueGrey,
-    Colors.orange,
-    Colors.purple,
-    Colors.green,
-  ];
+class AppTheme {
 
   final int selectedColor;
 
   AppTheme({
-
     required this.selectedColor
-  }): assert(
-    selectedColor >= 0, 'Selecciona un ncolor mayor a 0'
-  ),
-  assert (
-    selectedColor < colorList.length, 'El color seleccionado de ser menor a ${colorList.length - 1}'
+  }) : assert(
+    selectedColor >= 0, 'Selecciona un color mayor o igual a 0'
+  ), assert(
+    selectedColor < colorList.length, 'El color seleccionado debe ser menor a ${colorList.length}'
   );
 
   ThemeData getTheme() => ThemeData(
@@ -29,6 +23,4 @@ class AppTheme{
       centerTitle: false
     )
   );
-
-
 }
