@@ -21,9 +21,9 @@ const appMenuItems = <MenuItem> [
     icon: Icons.smart_button_rounded
   ),
   MenuItem(
-    title: 'Botones',
-    subTitle: 'Varios botones en Flutter',
-    link: '/buttons',
+    title: 'Tarjetas',
+    subTitle: 'Varios tarjetas en Flutter',
+    link: '/card',
     icon: Icons.smart_button_outlined
   )
 ];
